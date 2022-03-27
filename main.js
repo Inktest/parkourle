@@ -111,7 +111,10 @@ function SubmitAnswer() {
      var aoc = [text,_mapname.toLowerCase()]
      aoc = aoc.sort()
 
-     if (aoc[0] == text) {aoc = '▲'; result += "🔼"} else {aoc = '▼'; result += "🔽"}
+    var arrows = ["🠖","🠔","➡️","⬅️"]
+    if (read_cookie("alpha") == "false") arrows = ["🠕","🠗","⬆️","⬇️"]
+
+     if (aoc[0] == text) {aoc = arrows[0]; result += arrows[2]} else {aoc = arrows[1]; result += arrows[3]}
      //Var Changes
     CreateRow(buildercoincidences,diffcheck,lengthcheck,["guessoff",aoc])
 
