@@ -94,7 +94,7 @@ function SubmitAnswer() {
     if(buildercoincidences[1] == " " && lengthcheck[0] && diffcheck[0]) {
         window.alert("Congratulations!")
         EndGame()
-    } else if (guesses == 5) {
+    } else if (guesses == 7) {
 
         window.alert("You lost!")
         EndGame()
@@ -132,6 +132,6 @@ function EndGame() {
 }
 
 function GameToClipboard() {
-    navigator.clipboard.writeText(`#Parkourle ${guesses}/6\n${result}\nhttps://inktest.github.io/parkourle/`);
+    navigator.clipboard.writeText(`#Parkourle ${guesses}/8\n${result}\nhttps://inktest.github.io/parkourle/`);
     window.alert("Game copied to clipboard!")
 }
