@@ -1,9 +1,13 @@
 var maps,maplist,_mapname,mapjson,_mapdiff,_mapbuilders,_maplength;
 loadJSON(function(response) {maps = JSON.parse(response);
       maplist = maps["maps"]
+      var q = true;
+      while(q) {
       _mapname = maplist[Math.floor(Math.random() * maplist.length)];
       mapjson = maps[_mapname.toLowerCase()]
-     _mapdiff = mapjson.diff;
+      _mapdiff = mapjson.diff;
+      if ((read_cookie(`diff${_mapdiff}`) == "true") || (read_cookie(`diff${_mapdiff}`) == null)) q = false;
+    }
      _mapbuilders = mapjson.creators;
      _maplength = _mapname.split("").length;
     //console.log(_mapname)
@@ -12,7 +16,11 @@ loadJSON(function(response) {maps = JSON.parse(response);
 var guesses = 0;
 var result = "";
 
-
+function read_cookie(key)
+{
+    var result;
+    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
+}
 
 function loadJSON(callback) {   
 
