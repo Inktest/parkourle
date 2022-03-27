@@ -1,13 +1,17 @@
-var maps;
-loadJSON(function(response) {maps = JSON.parse(response);});
+var maps,maplist,_mapname,mapjson,_mapdiff,_mapbuilders,_maplength;
+loadJSON(function(response) {maps = JSON.parse(response);
+      maplist = maps["maps"]
+      _mapname = maplist[Math.floor(Math.random() * maplist.length)];
+      mapjson = maps[_mapname.toLowerCase()]
+     _mapdiff = mapjson.diff;
+     _mapbuilders = mapjson.creators;
+     _maplength = _mapname.split("").length;
+    console.log(_mapname)});
 
 var guesses = 0;
 var result = "";
 
-var _mapname = "aqua";
-var _mapdiff = 3;
-var _mapbuilders = ["Shinxray"];
-var _maplength = _mapname.split("").length;
+
 
 function loadJSON(callback) {   
 
@@ -64,7 +68,7 @@ function SubmitAnswer() {
     for (var i = 0; i < _currbuilders.length; i++) {
         if (_mapbuilders.includes(_currbuilders[i])) buildercoincidences += 1;
     }
-    if(buildercoincidences == 0) {buildercoincidences = ["guesswrong",""];result += "⬛"} else if(buildercoincidences != _mapbuilders.length) {buildercoincidences = ["guessoff",buildercoincidences]; result += "🟧"} else {{buildercoincidences = ["guessed",""];result += "🟩"}}
+    if(buildercoincidences == 0) {buildercoincidences = ["guesswrong",""];result += "⬛"} else if(buildercoincidences != _mapbuilders.length) {buildercoincidences = ["guessoff",buildercoincidences]; result += "🟧"} else {{buildercoincidences = ["guessed"," "];result += "🟩"}}
 
     
     //Name Length Check
@@ -86,7 +90,7 @@ function SubmitAnswer() {
     document.getElementById("hints").appendChild(guessdiv)
     
     document.getElementById("GuessText").value = ""
-    if(buildercoincidences[1] == "" && lengthcheck[0] && diffcheck[0]) {
+    if(buildercoincidences[1] == " " && lengthcheck[0] && diffcheck[0]) {
         window.alert("Congratulations!")
         EndGame()
     } else if (guesses == 5) {
@@ -127,6 +131,6 @@ function EndGame() {
 }
 
 function GameToClipboard() {
-    navigator.clipboard.writeText(`#Parkourle ${guesses}/7\n${result}`);
+    navigator.clipboard.writeText(`#Parkourle ${guesses}/6\n${result}\nhttps://inktest.github.io/parkourle/`);
     window.alert("Game copied to clipboard!")
 }
