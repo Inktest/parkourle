@@ -109,9 +109,9 @@ function SubmitAnswer() {
 
     var guessdiv = document.createElement('div')
     guessdiv.innerText = _currmap.name
-    guessdiv.style.color = "#548aa4";
+    guessdiv.className = `difficulty${_currdiff}`
     guessdiv.style.fontWeight = 'bold'
-    document.getElementById("hints").appendChild(guessdiv)
+    document.getElementById(`hints`).appendChild(guessdiv)
     
     document.getElementById("GuessText").value = ""
     if (guesses == 7) {
@@ -152,6 +152,6 @@ function EndGame() {
 }
 
 function GameToClipboard() {
-    navigator.clipboard.writeText(`#Parkourle ${guesses}/8\n${result}\nhttps://inktest.github.io/parkourle/`);
+    navigator.clipboard.writeText(`&& Parkourle ${guesses}/8\n${result}\nhttps://inktest.github.io/parkourle/`);
     window.alert("Game copied to clipboard!")
 }

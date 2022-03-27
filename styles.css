@@ -7,6 +7,22 @@ body {
     margin-right: auto;
   }
 
+.difficulty0 {
+    color:#86b359;   
+}
+.difficulty1 {
+    color:#ebf569;   
+}
+.difficulty2 {
+    color:#ec5d5d;   
+}
+.difficulty3 {
+    color:#ca66e9;   
+}
+.difficulty4 {
+    color:#e4ad46;   
+}
+
 .guessfont {
     color:#fff;
     font-size: 40px;
