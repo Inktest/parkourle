@@ -1,0 +1,82 @@
+body {
+    text-align: center;
+    font-family: "Lucida Console";
+    color: #86b359;
+    background-color: #101d15;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.guessfont {
+    color:#fff;
+    font-size: 40px;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    font-family: "Lucida Console";
+    border-radius: 10px;
+    border-width: 0px;
+
+}
+
+.hint {
+    margin-right: -2px;
+    margin-left: -2px;
+    margin-top:2px;
+    background-color:#548aa4;
+    
+    vertical-align: middle;
+    
+}
+
+.coolblue {
+    background-color:#548aa4;
+    color: #fff;
+}
+
+.guessarea {
+    margin:10px
+}
+
+.guessbutton {
+    height:35px;
+    width: 75px;
+    border-width: 0px;
+    border-radius: 10px;
+    font-family: "Lucida Console";
+    font-weight: bold;
+
+}
+
+.guesstext {
+    height:25px;
+    width: 210px;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    border-radius: 60px;
+    text-align: center;
+    border-width: 0px;
+
+}
+
+.varinfo {
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.guessed {
+    background-color: #86b359;
+}
+
+.guessoff {
+    background-color: #a4962a;
+}
+
+.guesswrong {
+    background-color: #548aa4;
+}

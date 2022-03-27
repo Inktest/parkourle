@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Parkourle</title>
+</head>
+
+<body>
+    <script src="main.js"></script>
+    <script type="json" src="maps.json"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <h2>Parkourle</h2>
+<h3>A Wordle adaptation for Manacube Parkour</h3>
+<h4>By Inktest</h4>
+ 
+ <div id="info">
+    <button type="button" class="coolblue" onclick="location.href='tutorial.html'">How to play</button>
+    <button type="button" class="coolblue" onclick="location.href='https://docs.google.com/spreadsheets/d/1HEsY56U5nG0BIql-Ef8ZSBdNgXO-xD2h7g6J0v27t2Y/edit?usp=sharing'">Map Data base</button>
+    <button type="button" class="coolblue" onclick="location.href='ppl.html'"">Some cool ppl</button>
+ </div>
+ 
+ 
+
+ <div>
+    <div class="varinfo" style="font-size: 70%;">
+        Builders
+      </div>
+      <div class="varinfo" style="margin-left:-5px">
+        Diff
+      </div>
+      <div class="varinfo" style="margin-left:-5px">
+        Name Length
+      </div>
+  </div>
+
+
+
+ <div id="hints">
+      
+ </div>
+
+ 
+<div class="guessarea" id="GameOver">
+    <input class="guesstext coolblue" id="GuessText" maxlength="25" type="text" placeholder="">
+    <input class="button guessbutton coolblue" id ="GuessBtn" type="submit" value="Submit" onclick="SubmitAnswer()">
+</div>
+
+
+</body>
+
+</html>
