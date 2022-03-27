@@ -6,7 +6,8 @@ loadJSON(function(response) {maps = JSON.parse(response);
      _mapdiff = mapjson.diff;
      _mapbuilders = mapjson.creators;
      _maplength = _mapname.split("").length;
-    console.log(_mapname)});
+    //console.log(_mapname)
+   });
 
 var guesses = 0;
 var result = "";
@@ -122,7 +123,7 @@ function EndGame() {
     btn2.className = `button guessbutton coolblue`
     btn2.innerText = `New Game`
     btn.onclick = function(){GameToClipboard()}
-    btn2.onclick = function(){location.href='/'}
+    btn2.onclick = function(){location.href='/parkourle/'}
     document.getElementById("GameOver").appendChild(txt)
     document.getElementById("GameOver").appendChild(document.createTextNode (" "));
     document.getElementById("GameOver").appendChild(btn)
