@@ -56,6 +56,11 @@ document.getElementById("hints").appendChild(div)
 
  }
 
+ document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        SubmitAnswer();
+    }
+});
 
 function SubmitAnswer() {
    var text =document.getElementById("GuessText").value.toString().toLowerCase()
