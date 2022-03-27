@@ -100,19 +100,19 @@ function SubmitAnswer() {
     //Diff Check
     var _currdiff = _currmap.diff
     var diffcheck = [(_mapdiff == _currdiff),"guessed",""];
-    if (!diffcheck[0]) {if(_currdiff > _mapdiff) {diffcheck = [false,"guessoff","▼"];result += "🔽"} else {diffcheck = [false,"guessoff","▲"];result += "🔼"}} else {result += "🟩"}
+    if (!diffcheck[0]) {if(_currdiff > _mapdiff) {diffcheck = [false,"guessoff","v"];result += "🔽"} else {diffcheck = [false,"guessoff","^"];result += "🔼"}} else {result += "🟩"}
     
     //Name Length Check
     var _currlength = text.split("").length;
     var lengthcheck = [(_currlength == _maplength),"guessed",""];
-    if (!lengthcheck[0]) {if(_currlength > _maplength) {lengthcheck = [false,"guessoff","▼"];result += "🔽"} else {lengthcheck = [false,"guessoff","▲"];result += "🔼"}} else {result += "🟩"}
+    if (!lengthcheck[0]) {if(_currlength > _maplength) {lengthcheck = [false,"guessoff","v"];result += "🔽"} else {lengthcheck = [false,"guessoff","^"];result += "🔼"}} else {result += "🟩"}
 
      //Alphabetical Order Check
      var aoc = [text,_mapname.toLowerCase()]
      aoc = aoc.sort()
 
-    var arrows = ["🠖","🠔","➡️","⬅️"]
-    if (read_cookie("alpha") == "false") arrows = ["🠕","🠗","⬆️","⬇️"]
+    var arrows = [">","<","➡️","⬅️"]
+    if (read_cookie("alpha") == "false") arrows = ["^","v","⬆️","⬇️"]
 
      if (aoc[0] == text) {aoc = arrows[0]; result += arrows[2]} else {aoc = arrows[1]; result += arrows[3]}
      //Var Changes
